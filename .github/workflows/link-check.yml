@@ -1,4 +1,5 @@
 
+
 name: Check research links
 
 on:
@@ -19,6 +20,7 @@ jobs:
       - name: Check Markdown links
         uses: lycheeverse/lychee-action@v2
         with:
-         args: --verbose --no-progress README.md 
+          args: --verbose --no-progress README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
