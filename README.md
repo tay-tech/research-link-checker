@@ -25,4 +25,4 @@ Currently in development.
 
 - GitHub: https://github.com/
 - Python: https://www.python.org/
-- Broken test link: https://example.com/this-page-does-not-exist-12345
+- Broken test link: https://research-link-checker-test.invalid/
