@@ -21,3 +21,7 @@ unavailable or redirect to different pages.
 ## Status
 
 Currently in development.
+## Test Links
+
+- GitHub: https://github.com/
+- Python: https://www.python.org/
