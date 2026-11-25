@@ -1,5 +1,6 @@
 
 
+
 name: Check research links
 
 on:
@@ -17,10 +18,11 @@ jobs:
       - name: Get repository files
         uses: actions/checkout@v4
 
+      - name: Install Lychee
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/lycheeverse/lychee/master/install.sh | sh
+
       - name: Check Markdown links
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: --verbose --no-progress --no-ignore README.md
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: lychee --verbose --no-progress --no-ignore README.md
+
 
