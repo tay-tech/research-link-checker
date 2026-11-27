@@ -48,12 +48,13 @@ The experiment demonstrated that Lychee can detect an HTTP 404 response in a REA
 
 ### Test 1: Broken Link Detection
 
-![Failed workflow showing HTTP 404 detection](failed-run.png)
+![Failed workflow showing HTTP 404 detection](<ChatGPT Image Nov 27, 2026, 10_37_43 PM.png>)
 
 The workflow detected the HTTP 404 response and failed with exit code 2.
 
 ### Test 2: Successful Link Validation
 
-![Successful workflow showing two valid links](successful-run.png)
+![Successful workflow showing two valid links](image.png)
 
 After removing the broken URL, both remaining links passed validation.
+
