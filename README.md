@@ -43,7 +43,42 @@ Currently in development.
 
 ### Conclusion
 
-The experiment demonstrated that Lychee can detect an HTTP 404 response in a README file and that GitHub Actions can use the result to determine whether a workflow passes or fails.  
+The experiment demonstrated that Lychee can detect an HTTP 404 response in a README file and that GitHub Actions can use the result to determine whether a workflow passes or fails.
+## How the Workflow Works
+
+The workflow is defined in `.github/workflows/link-check.yml`.
+
+```yaml
+name: Check research links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get repository files
+        uses: actions/checkout@v4
+
+      - name: Install Lychee
+        uses: taiki-e/install-action@v2
+        with:
+          tool: lychee
+
+      - name: Check Markdown links
+        run: lychee --verbose --no-progress --no-ignore README.md
+```
+
+The workflow is triggered by repository changes, pull requests targeting `main`, or manual execution. It retrieves the repository files, installs Lychee, and checks the README for links.
+
+If Lychee detects a rejected HTTP response, the command returns a non-zero exit status, causing the workflow to fail.
+
 ## Workflow Evidence
 
 ### Test 1: Broken Link Detection
