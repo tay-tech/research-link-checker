@@ -25,4 +25,22 @@ Currently in development.
 
 - GitHub: https://github.com/
 - Python: https://www.python.org/
-  
+## Test Results
+
+### Test 1 — Broken Link Detection
+
+- Two links returned successful responses.
+- The intentionally broken HTTPBin URL returned `404 Not Found`.
+- Lychee reported one error.
+- GitHub Actions failed with exit code 2.
+
+### Test 2 — Clean Repository
+
+- The broken test URL was removed.
+- Both remaining links passed validation.
+- Lychee reported 2 successful links and 0 errors.
+- GitHub Actions completed successfully.
+
+### Conclusion
+
+The experiment demonstrated that Lychee can detect an HTTP 404 response in a README file and that GitHub Actions can use the result to determine whether a workflow passes or fails.  
