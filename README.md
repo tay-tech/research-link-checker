@@ -25,4 +25,4 @@ Currently in development.
 
 - GitHub: https://github.com/
 - Python: https://www.python.org/
-- Broken test link: https://research-link-checker-test.invalid/
+- Broken test link: https://httpbin.org/status/404 
